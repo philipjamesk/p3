@@ -20,4 +20,8 @@ Route::get('/loremipsum', function () {
   return view('lorem');
 });
 
+Route::get('/bootstrap', function () {
+  return view('bootstrap');
+});
+
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
