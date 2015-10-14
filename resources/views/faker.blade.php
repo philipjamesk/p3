@@ -1,19 +1,29 @@
-<?php
-// require the Faker autoloader
-// require_once '/fzaninotto/faker/src/autoload.php';
-// alternatively, use another PSR-0 compliant autoloader (like the Symfony2 ClassLoader for instance)
+@extends('layouts.master')
 
-// use the factory to create a Faker\Generator instance
-$faker = Faker\Factory::create();
+@section('title')
+  User Generator
+@stop
 
-// generate data by accessing properties
-echo "Name: $faker->name<br>";
-  // 'Lucy Cechtelar';
-echo "Address: $faker->address<br>";
-  // "426 Jordy Lodge
-  // Cartwrightshire, SC 88120-6700"
-echo "Text: $faker->text";
-  // Dolores sit sint laboriosam dolorem culpa et autem. Beatae nam sunt fugit
-  // et sit et mollitia sed.
-  // Fuga deserunt tempora facere magni omnis. Omnis quia temporibus laudantium
-  // sit minima sint.
+@section('content')
+
+  <?php
+  // use the factory to create a Faker\Generator instance
+  $faker = Faker\Factory::create();
+
+  for ($i=0; $i < 5; $i++) { 
+    // generate data by accessing properties
+    echo "Name: $faker->name<br>";
+    // 'Lucy Cechtelar';
+    echo "Address: $faker->address<br>";
+    // "426 Jordy Lodge
+    // Cartwrightshire, SC 88120-6700"
+    echo "Text: $faker->text<br>";
+    // Dolores sit sint laboriosam dolorem culpa et autem. Beatae nam sunt fugit
+    // et sit et mollitia sed.
+    // Fuga deserunt tempora facere magni omnis. Omnis quia temporibus laudantium
+    // sit minima sint.
+    echo "<hr>";
+  }
+
+  ?>
+@stop

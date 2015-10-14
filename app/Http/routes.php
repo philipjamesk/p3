@@ -12,17 +12,11 @@
 */
 
 Route::get('/', function () {
-  return view('welcome');
+  return view('home');
 });
-
 
 Route::get('/loremipsum', function () {
-  return view('lorem');
-});
-
-
-Route::get('/bootstrap', function () {
-  return view('bootstrap');
+  return view('loremipsum');
 });
 
 Route::get('/faker', function () {
