@@ -15,8 +15,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/">Home</a></li>
-        <li><a href="/loremipsum">Lorem Ipsum</a></li>
-        <li><a href="/faker">User Generator</a></li>
+        <li><a href="/lorem">Lorem Ipsum</a></li>
+        <li><a href="/users">User Generator</a></li>
+        <li><a href="/password">Password Generator</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container -->

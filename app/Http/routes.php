@@ -11,18 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-  return view('home');
-});
 
-Route::get('/loremipsum', function () {
-  return view('loremipsum');
-});
+Route::get('/', 'MyController@getIndex');
 
-Route::get('/faker', function () {
-  return view('faker');
-});
+Route::get('/lorem', 'MyController@getLorem');
+Route::post('/lorem', 'MyController@postLorem');
 
+Route::get('/users', 'MyController@getUsers');
+Route::post('/users', 'MyController@postUsers');
+
+Route::get('/password', 'MyController@getPassword');
+Route::post('/password', 'MyController@postPassword');
+
+// views logs on local environment
 if(App::environment('local')) {
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 };
