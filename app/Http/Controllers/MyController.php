@@ -28,8 +28,16 @@ class MyController extends Controller {
     /**
      * Responds to requests to POST /lorem
      */
-    public function postLorem() {
-        return view('lorem_post');
+    public function postLorem(Request $request) {
+        
+        $this->validate(
+            $request,
+            ['paragraphs' => 'integer|min:1|max:99']
+        );
+
+        $paragraphs = $request->input('paragraphs');
+
+        return view('lorem')->with('paragraphs', $paragraphs);
     }
 
     /**

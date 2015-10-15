@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">PhilipJames.me</a>
+      <a class="navbar-brand" href="http://p1.philipjames.me">PhilipJames.me</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
