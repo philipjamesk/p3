@@ -51,7 +51,7 @@ class MyController extends Controller {
      * Responds to requests to POST /users
      */
     public function postUsers() {
-        return view('users_post');
+        return view('users');
     }
 
     /**
@@ -65,6 +65,6 @@ class MyController extends Controller {
      * Responds to requests to POST /password
      */
     public function postPassword() {
-        return view('password_post');
+        return view('password');
     }
 }
