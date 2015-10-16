@@ -11,17 +11,18 @@
 |
 */
 
+Route::get('/', function () {
+    return view('index');
+});
 
-Route::get('/', 'MyController@getIndex');
+Route::get('/lorem', 'LoremController@getLorem');
+Route::post('/lorem', 'LoremController@postLorem');
 
-Route::get('/lorem', 'MyController@getLorem');
-Route::post('/lorem', 'MyController@postLorem');
+Route::get('/users', 'UsersController@getUsers');
+Route::post('/users', 'UsersController@postUsers');
 
-Route::get('/users', 'MyController@getUsers');
-Route::post('/users', 'MyController@postUsers');
-
-Route::get('/password', 'MyController@getPassword');
-Route::post('/password', 'MyController@postPassword');
+Route::get('/password', 'PasswordController@getPassword');
+Route::post('/password', 'PasswordController@postPassword');
 
 // views logs on local environment
 if(App::environment('local')) {

@@ -12,7 +12,7 @@
   $numbers = 2;
   $chars = 2;
   $seperator = '-';
-  $case = 'camelcase';
+  $case = 'camelCase';
 
   # check box settings
   $numCheck = '';
@@ -30,17 +30,17 @@
 
 
     # check user entered values, if they are not valid the default stays
-    // if (is_numeric($_POST['numberOfWords']) AND ($_POST['numberOfWords'] >= 4 AND $_POST['numberOfWords'] <= 12)) {
-    //   $numberOfWords = (int)$_POST['numberOfWords'];
-    // }
+    if (is_numeric($_POST['numberOfWords']) AND ($_POST['numberOfWords'] >= 4 AND $_POST['numberOfWords'] <= 12)) {
+      $numberOfWords = (int)$_POST['numberOfWords'];
+    }
 
-    // if (is_numeric($_POST['min']) AND ($_POST['min'] >= DEFAULT_MIN AND $_POST['min'] <= DEFAULT_MAX)) {
-    //   $minLength = (int)$_POST['min'];
-    // } 
+    if (is_numeric($_POST['min']) AND ($_POST['min'] >= DEFAULT_MIN AND $_POST['min'] <= DEFAULT_MAX)) {
+      $minLength = (int)$_POST['min'];
+    } 
 
-    // if (is_numeric($_POST['max']) AND ($_POST['max'] >= DEFAULT_MIN AND $_POST['max'] <= DEFAULT_MAX)) {
-    //   $maxLength = (int)$_POST['max'];
-    // } 
+    if (is_numeric($_POST['max']) AND ($_POST['max'] >= DEFAULT_MIN AND $_POST['max'] <= DEFAULT_MAX)) {
+      $maxLength = (int)$_POST['max'];
+    } 
 
     # if min is greater than max set them to equal
     if ($minLength > $maxLength) {
@@ -48,7 +48,7 @@
     }
 
     // $case = $_POST['case'];
-    // $seperator = $_POST['seperator'];
+    $seperator = $_POST['seperator'];
     
 
     # add string of random numbers if selected by user
@@ -101,16 +101,16 @@
    *  @return string - converted word
   */
   function setCase($word, $wordNumber) {
-    // if ($GLOBALS['case'] == 'lowercase') {
-    //   return strtolower($word); // converted to lowercase in case future word list contains capital letters
-    // } elseif ($GLOBALS['case'] == 'camelcase') {
-    //   $word = strtolower($word); 
-    //   if ($wordNumber > 0) { // do not capitilize first word in camelCase
-    //     $word = ucfirst($word); 
-    //   }
-    //   return $word;
-    // } else { // uppercase is selected
-    //   return strtoupper($word);
-    // }
+    if ($GLOBALS['case'] == 'lowercase') {
+      return strtolower($word); // converted to lowercase in case future word list contains capital letters
+    } elseif ($GLOBALS['case'] == 'camelcase') {
+      $word = strtolower($word); 
+      if ($wordNumber > 0) { // do not capitilize first word in camelCase
+        $word = ucfirst($word); 
+      }
+      return $word;
+    } else { // uppercase is selected
+      return strtoupper($word);
+    }
     return $word;
   }

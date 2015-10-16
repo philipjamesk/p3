@@ -8,6 +8,7 @@
 
   <form method="POST" actions="/users">
     <input type="hidden" value="{{ csrf_token() }}" name="_token">
+    
     <button type="submit" class="btn btn-primary">Generate Users</button>
   </form>
 
@@ -19,8 +20,6 @@
   
   @if ($_SERVER['REQUEST_METHOD'] == 'POST')
     <hr>
-    <?php require('php/user-generator.php'); ?>
-
     @foreach ($users as $user)
       @foreach ($user as $key=>$value)
         <p>{{ $key }}: {{ $value }}</p>

@@ -24,10 +24,6 @@
 
   @if ($_SERVER['REQUEST_METHOD'] == 'POST')
     <hr>
-    <?php
-      $generator = new Badcow\LoremIpsum\Generator();
-      $text = $generator->getParagraphs($paragraphs);
-      echo implode('<p>', $text); 
-    ?>
+    <p><?php echo implode('<p>', $text); ?></p>
   @endif
 @stop
