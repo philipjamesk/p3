@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Badcow\LoremIpsum\Generator;
 
-class MyController extends Controller {
+class PasswordController extends Controller {
 
     public function __construct() {
         # Put anything here that should happen before any of the other actions

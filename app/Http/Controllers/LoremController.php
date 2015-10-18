@@ -26,14 +26,15 @@ class LoremController extends Controller {
         
         $this->validate(
             $request,
-            ['paragraphs' => 'integer|min:1|max:99']
+            ['paragraphs' => 'required|integer|min:1|max:99']
         );
 
         $paragraphs = $request->input('paragraphs');
         $generator = new Generator();
         $text = $generator->getParagraphs($paragraphs);
 
-        return view('lorem')->with('paragraphs', $paragraphs)
-                            ->with('text', $text);
+        $request->flash();
+
+        return view('lorem')->with('text', $text);
     }
 }

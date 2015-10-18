@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Faker\Factory;
@@ -22,25 +23,50 @@ class UsersController extends Controller {
     /**
      * Responds to requests to POST /users
      */
-    public function postUsers() {
-        $faker = Factory::create('en_US');
-        // empty array for storing users
-        $users = array();
+    public function postUsers(Request $request) {
+
+        $messages = array('options.required' => 'At least one option must be selected.');
         
-        // hard code for now
-        $number_of_users = 10;
+        $this->validate(
+            $request,
+            [ 'number' => 'required|integer|min:1|max:99',
+              'options' => 'required'],
+              $messages
+        );
 
-        for ($i=0; $i < $number_of_users; $i++) { 
-            $user = array();
-            $user['Name'] = $faker->name;
-            $user['Address'] = $faker->address;
-            $user['Email'] = $faker->email;
-            $user['Phone'] = $faker->phoneNumber;
-            $user['Username'] = $faker->username;
-            $user['Password'] = $faker->password;
-            array_push($users, $user);
-        }
+        $faker = Factory::create('en_US');
 
-        return view('users')->with('users', $users);
+        $data = $request->all();
+        $options = $data['options'];
+
+        $users = array();
+        $number_of_users = $data['number'];
+        if (isset($data['options'])) {
+            $options=$data['options'];
+            for ($i=0; $i < $number_of_users; $i++) { 
+                $user = array();
+                if (in_array('name', $options)) {
+                    $user['Name'] = $faker->name;
+                }
+                if (in_array('email', $options)) {
+                    $user['Email'] = $faker->email;
+                }
+                if (in_array('username', $options)) {
+                    $user['Username'] = $faker->username;
+                }
+                if (in_array('address', $options)) {
+                    $user['Address'] = $faker->address;
+                }
+                if (in_array('phone', $options)) {
+                   $user['Phone'] = $faker->phoneNumber;
+                }
+                array_push($users, $user);
+            }
+        } 
+
+        $request->flash();
+
+        return view('users')->with('users', $users)
+                            ->with('options', $options);
     }
 }
