@@ -16,7 +16,7 @@ class LoremController extends Controller {
      * Responds to requests to GET /lorem
      */
     public function getLorem() {
-        return view('lorem');
+        return view('lorem.index');
     }
    
     /**
@@ -35,6 +35,6 @@ class LoremController extends Controller {
 
         $request->flash();
 
-        return view('lorem')->with('text', $text);
+        return view('lorem.post')->with('text', $text);
     }
 }

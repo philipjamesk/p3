@@ -17,21 +17,19 @@ class UsersController extends Controller {
      * Responds to requests to GET /users
      */
     public function getUsers() {
-        return view('users');
+        return view('users.index');
     }
 
     /**
      * Responds to requests to POST /users
      */
     public function postUsers(Request $request) {
-
-        $messages = array('options.required' => 'At least one option must be selected.');
         
         $this->validate(
             $request,
             [ 'number' => 'required|integer|min:1|max:99',
               'options' => 'required'],
-              $messages
+              array('options.required' => 'At least one option must be selected.')
         );
 
         $faker = Factory::create('en_US');
@@ -66,7 +64,7 @@ class UsersController extends Controller {
 
         $request->flash();
 
-        return view('users')->with('users', $users)
-                            ->with('options', $options);
+        return view('users.post')->with('users', $users)
+                                 ->with('options', $options);
     }
 }
