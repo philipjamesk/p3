@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Faker\Factory;
@@ -25,11 +24,13 @@ class UsersController extends Controller {
      */
     public function postUsers(Request $request) {
         
+        $messages = array('options.required' => 'At least one option must be selected.');
+
         $this->validate(
             $request,
             [ 'number' => 'required|integer|min:1|max:99',
               'options' => 'required'],
-              array('options.required' => 'At least one option must be selected.')
+              $messages
         );
 
         $faker = Factory::create('en_US');
@@ -61,10 +62,10 @@ class UsersController extends Controller {
                 array_push($users, $user);
             }
         } 
-
         $request->flash();
 
         return view('users.post')->with('users', $users)
                                  ->with('options', $options);
     }
+
 }
