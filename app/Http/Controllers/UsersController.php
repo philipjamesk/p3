@@ -35,37 +35,32 @@ class UsersController extends Controller {
 
         $faker = Factory::create('en_US');
 
-        $data = $request->all();
-        $options = $data['options'];
-
         $users = array();
-        $number_of_users = $data['number'];
-        if (isset($data['options'])) {
-            $options=$data['options'];
-            for ($i=0; $i < $number_of_users; $i++) { 
-                $user = array();
-                if (in_array('name', $options)) {
-                    $user['Name'] = $faker->name;
-                }
-                if (in_array('email', $options)) {
-                    $user['Email'] = $faker->email;
-                }
-                if (in_array('username', $options)) {
-                    $user['Username'] = $faker->username;
-                }
-                if (in_array('address', $options)) {
-                    $user['Address'] = $faker->address;
-                }
-                if (in_array('phone', $options)) {
-                   $user['Phone'] = $faker->phoneNumber;
-                }
-                array_push($users, $user);
+        $number_of_users = $request['number'];    
+
+        for ($i=0; $i < $number_of_users; $i++) { 
+            $user = array();
+            if ($request->has('options.name')) {
+                $user['Name'] = $faker->name;
             }
-        } 
+            if ($request->has('options.email')) {
+                $user['Email'] = $faker->email;
+            }
+            if ($request->has('options.username')) {
+                $user['Username'] = $faker->username;
+            }
+            if ($request->has('options.address')) {
+                $user['Address'] = $faker->address;
+            }
+            if ($request->has('options.phone')) {
+               $user['Phone'] = $faker->phoneNumber;
+            }
+            array_push($users, $user);
+        }
+
         $request->flash();
 
-        return view('users.post')->with('users', $users)
-                                 ->with('options', $options);
+        return view('users.post')->with('users', $users);
     }
 
 }

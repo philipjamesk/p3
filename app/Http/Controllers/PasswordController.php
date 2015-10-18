@@ -53,7 +53,7 @@ class PasswordController extends Controller {
         }
 
         // Validation passed, make password
-        $words = file_get_contents('data/wordlist.txt');
+        $words = file_get_contents('data/wordlist.dat');
         $words = unserialize($words);
         
         // Empty password

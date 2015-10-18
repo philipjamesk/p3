@@ -6,5 +6,5 @@
 
 @section('content')
   @include('password.form')
-  <h3>{{ $password }}</h3>
+  <h3>Your password: <em>{{ $password }}</em></h3>
 @stop
