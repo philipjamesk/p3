@@ -20,7 +20,7 @@ class UsersController extends Controller {
     }
 
     /**
-     * Responds to requests to POST /users
+     * Responds to requests to POST /users#results
      */
     public function postUsers(Request $request) {
         

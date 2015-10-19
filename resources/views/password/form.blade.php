@@ -16,56 +16,42 @@
         <input type="text" name="maximum" value={{ old('maximum', '12')}}>
       </div>
       <div class="form-group">
-        <input type="checkbox" name="add_number" >
+        <input type="checkbox" name="add_number" {{ old('add_number') ? 'checked' : '' }}>
         <label for="add_number">Random number
         <select name="numbers" id="numbers">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
+        @for ($i = 1; $i <= 10; $i++)
+          <option value='{{ $i }}' {{ (old('numbers', '2') == $i) ? 'selected' : '' }}>{{ $i }}</option>
+        @endfor 
         </select>
         digits</label>
       </div>
       <div class="form-group">
-        <input type="checkbox" name="add_char" >
+        <input type="checkbox" name="add_char" {{ old('add_char') ? 'checked' : '' }}>
         <label for="add_char">Random characters
         <select name="chars" id="chars">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
+        @for ($i = 1; $i <= 10; $i++)
+          <option value='{{ $i }}' {{ (old('chars', '2') == $i) ? 'selected' : '' }}>{{ $i }}</option>
+        @endfor
         </select>
         characters</label>
       </div>
       <div class="form-group">
         <label for="seperator">Chose a seperator:</label>
         <select name="seperator" id="seperator">
-          <option value="">(none) ''</option>
-          <option value=" ">(space) ' '</option>
-          <option value="-" selected>hyphen '-'</option>
-          <option value=".">dot '.'</option>
+          <option value=""  {{ old('seperator') == '' ? 'selected' : '' }}>(none) ''</option>
+          <option value=" "  {{ old('seperator') == ' ' ? 'selected' : '' }}>(space) ' '</option>
+          <option value="-"  {{ old('seperator', '-') == '-' ? 'selected' : '' }}>hyphen '-'</option>
+          <option value="."  {{ old('seperator') == '.' ? 'selected' : '' }}>dot '.'</option>
         </select>
       </div>
       <div class="form-group">
         <label>What case would you like?</label><br>
         <label class="radio-inline">
-          <input type="radio" name="case" value="lowercase">lowercase</label>
+          <input type="radio" name="case" value="lowercase" {{ old('case') == 'lowercase' ? 'checked' : '' }}>lowercase</label>
         <label class="radio-inline">
-          <input type="radio" name="case" value="camelcase" checked>camelCase</label>
+          <input type="radio" name="case" value="camelcase" {{ old('case', 'camelcase') == 'camelcase' ? 'checked' : '' }}>camelCase</label>
         <label class="radio-inline">
-          <input type="radio" name="case" value="uppercase">UPPERCASE</label>
+          <input type="radio" name="case" value="uppercase" {{ old('case') == 'uppercase' ? 'checked' : '' }}>UPPERCASE</label>
       </div>
       <input type="hidden" value="{{ csrf_token() }}" name="_token">
       <button type="submit" class="btn btn-primary">Generate Password</button>
