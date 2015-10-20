@@ -28,7 +28,7 @@ class UsersController extends Controller {
 
         $this->validate(
             $request,
-            [ 'number' => 'required|integer|min:1|max:99',
+            [ 'number' => 'required|integer|min:1|max:100',
               'options' => 'required'],
               $messages
         );
@@ -59,6 +59,10 @@ class UsersController extends Controller {
         }
 
         $request->flash();
+        
+        if ($request->input('json')) {
+            return response()->json($users);
+        }
 
         return view('users.post')->with('users', $users);
     }
