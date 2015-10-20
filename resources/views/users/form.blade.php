@@ -8,23 +8,23 @@
   <h3>Options</h3>
   <fieldset>
     <label for="name">Name:</label>
-    <input type="checkbox" name="options[name]" value="name" {{ old('options.name') ? "checked" : "" }}>
+    <input type="checkbox" name="options[name]" value="name" id="name" {{ old('options.name') ? "checked" : "" }}>
   </fieldset>
   <fieldset>
     <label for="email">Email:</label>
-    <input type="checkbox" name="options[email]" value="email" {{ old('options.email') ? "checked" : "" }}>
+    <input type="checkbox" name="options[email]" value="email" id="email" {{ old('options.email') ? "checked" : "" }}>
   </fieldset>
   <fieldset>
     <label for="username">Username:</label>
-    <input type="checkbox" name="options[username]" value="username" {{ old('options.username') ? 'checked' : '' }}>
+    <input type="checkbox" name="options[username]" value="username" id="username" {{ old('options.username') ? 'checked' : '' }}>
   </fieldset>
   <fieldset>
     <label for="address">Address:</label>
-    <input type="checkbox" name="options[address]" value="address" {{ old('options.address') ? 'checked' : '' }}>
+    <input type="checkbox" name="options[address]" value="address" id="address" {{ old('options.address') ? 'checked' : '' }}>
   </fieldset>
   <fieldset>
     <label for="phone">Phone Number:</label>
-    <input type="checkbox" name="options[phone]" value="phone" {{ old('options.phone') ? 'checked' : '' }}>
+    <input type="checkbox" name="options[phone]" value="phone" id="phone" {{ old('options.phone') ? 'checked' : '' }}>
   </fieldset>
   <button type="submit" class="btn btn-primary">Generate Users</button>
 </form>
