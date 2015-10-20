@@ -17,25 +17,23 @@
       </div>
       <div class="form-group">
         <input type="checkbox" name="add_number" id="add_number" {{ old('add_number') ? 'checked' : '' }}>
-        <label for="add_number">Random number
+        <label for="add_number">Random number</label>
         <select name="numbers" id="numbers">
         @for ($i = 1; $i <= 10; $i++)
           <option value='{{ $i }}' {{ (old('numbers', '2') == $i) ? 'selected' : '' }}>{{ $i }}</option>
         @endfor 
         </select>
-        digits</label>
+        <label for="numbers">digits</label>
       </div>
       <div class="form-group">
-        <fieldset>
-          <input type="checkbox" name="add_char" id="add_char" {{ old('add_char') ? 'checked' : '' }}>
-          <label for="add_char">Random characters
-        </fieldset>
+        <input type="checkbox" name="add_char" id="add_char" {{ old('add_char') ? 'checked' : '' }}>
+        <label for="add_char">Random characters</label>
         <select name="chars" id="chars">
         @for ($i = 1; $i <= 10; $i++)
           <option value='{{ $i }}' {{ (old('chars', '2') == $i) ? 'selected' : '' }}>{{ $i }}</option>
         @endfor
         </select>
-        characters</label>
+        <label for="chars">characters</label>
       </div>
       <div class="form-group">
         <label for="seperator">Chose a seperator:</label>
