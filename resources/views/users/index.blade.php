@@ -6,7 +6,5 @@
 
 @section('content')
   @include('users.form')
-  @if(count($errors) > 0)
-    @include('includes.errors')
-  @endif
+  @include('includes.errors')
 @stop
