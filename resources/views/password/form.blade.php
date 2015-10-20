@@ -2,7 +2,7 @@
   <div class="col-lg-12">
     <h2>Password Generator</h2>
     <p>Your clever password may not be as secure as you think. See <a href="https://xkcd.com/936/" target="_blank">this comic</a> for more information. After that, you can use our free password generator to create an xkcd style password. The password is generated use a Google compiled list of 10,000 common English words. For added security, add a random number to the start, some random characters to the end, or switch up the seperator between words and the word case.</p>
-    <form method="POST" actions="/password">
+    <form method="POST" action="/password">
       <div class="form-group">
         <label>Number of words (4-12):</label>
         <input type="text" name="number_of_words" value={{ old('number_of_words', '4')}}>

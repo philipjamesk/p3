@@ -1,5 +1,5 @@
 <h2>Create Random Users</h2>
-<form method="POST" actions="/users">
+<form method="POST" action="/users">
   <input type="hidden" value="{{ csrf_token() }}" name="_token">
   <fieldset>
     <label for="number">How Many Users (1-99):</label>
