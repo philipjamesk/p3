@@ -16,7 +16,7 @@
         <input type="text" name="maximum" value={{ old('maximum', '12')}}>
       </div>
       <div class="form-group">
-        <input type="checkbox" name="add_number" {{ old('add_number') ? 'checked' : '' }}>
+        <input type="checkbox" name="add_number" id="add_number" {{ old('add_number') ? 'checked' : '' }}>
         <label for="add_number">Random number
         <select name="numbers" id="numbers">
         @for ($i = 1; $i <= 10; $i++)
@@ -26,7 +26,7 @@
         digits</label>
       </div>
       <div class="form-group">
-        <input type="checkbox" name="add_char" {{ old('add_char') ? 'checked' : '' }}>
+        <input type="checkbox" name="add_char" id="add_char" {{ old('add_char') ? 'checked' : '' }}>
         <label for="add_char">Random characters
         <select name="chars" id="chars">
         @for ($i = 1; $i <= 10; $i++)
