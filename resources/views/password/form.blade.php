@@ -38,10 +38,10 @@
       <div class="form-group">
         <label for="seperator">Chose a seperator:</label>
         <select name="seperator" id="seperator">
-          <option value=""  {{ old('seperator') == '' ? 'selected' : '' }}>(none) ''</option>
-          <option value=" "  {{ old('seperator') == ' ' ? 'selected' : '' }}>(space) ' '</option>
+          <option value=""  {{ old('seperator','-') == '' ? 'selected' : '' }}>(none) ''</option>
+          <option value=" "  {{ old('seperator','-') == ' ' ? 'selected' : '' }}>(space) ' '</option>
           <option value="-"  {{ old('seperator', '-') == '-' ? 'selected' : '' }}>hyphen '-'</option>
-          <option value="."  {{ old('seperator') == '.' ? 'selected' : '' }}>dot '.'</option>
+          <option value="."  {{ old('seperator','-') == '.' ? 'selected' : '' }}>dot '.'</option>
         </select>
       </div>
       <div class="form-group">
