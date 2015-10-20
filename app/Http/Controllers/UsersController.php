@@ -58,13 +58,23 @@ class UsersController extends Controller {
             array_push($users, $user);
         }
 
+        setcookie('users', serialize($users), time()+60);
         $request->flash();
-        
-        if ($request->input('json')) {
-            return response()->json($users);
-        }
 
         return view('users.post')->with('users', $users);
+    }
+
+   /**
+    * Responds to requests to GET /users/json
+    */
+    public function getJson() {
+        if (isset($_COOKIE['users'])) { 
+            $users = unserialize($_COOKIE['users']);
+            return response()->json($users);
+        } else {
+            $message = "Your data has expired please return to <a href='/users'>Generate Users</a>";
+            return view('errors.custom_error')->with('message', $message);
+        }
     }
 
 }

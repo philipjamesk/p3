@@ -20,6 +20,7 @@ Route::post('/lorem', 'LoremController@postLorem');
 
 Route::get('/users', 'UsersController@getUsers');
 Route::post('/users', 'UsersController@postUsers');
+Route::get('/users/results', 'UsersController@getJson');
 
 Route::get('/password', 'PasswordController@getPassword');
 Route::post('/password', 'PasswordController@postPassword');

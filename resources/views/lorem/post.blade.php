@@ -7,5 +7,7 @@
 @section('content')
   @include('lorem.form')
   <hr>
-  <p><?php echo implode('<p>', $text); ?></p>
+  @foreach($text as $paragraph)
+    <p>{{ $paragraph }}</p>
+  @endforeach
 @stop

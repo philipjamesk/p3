@@ -13,4 +13,5 @@
     @endforeach
     <hr>
   @endforeach
+  <a href="/users/results" target="_blank"><button class="btn btn-primary">Get JSON</button></a>
 @stop
