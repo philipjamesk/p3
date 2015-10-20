@@ -26,8 +26,10 @@
         digits</label>
       </div>
       <div class="form-group">
-        <input type="checkbox" name="add_char" id="add_char" {{ old('add_char') ? 'checked' : '' }}>
-        <label for="add_char">Random characters
+        <fieldset>
+          <input type="checkbox" name="add_char" id="add_char" {{ old('add_char') ? 'checked' : '' }}>
+          <label for="add_char">Random characters
+        </fieldset>
         <select name="chars" id="chars">
         @for ($i = 1; $i <= 10; $i++)
           <option value='{{ $i }}' {{ (old('chars', '2') == $i) ? 'selected' : '' }}>{{ $i }}</option>
