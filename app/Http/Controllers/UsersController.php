@@ -58,7 +58,9 @@ class UsersController extends Controller {
             array_push($users, $user);
         }
 
-        setcookie('users', serialize($users), time()+60);
+        // 
+        setcookie('users', serialize($users), time()+300);
+        
         $request->flash();
 
         return view('users.post')->with('users', $users);

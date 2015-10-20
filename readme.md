@@ -1,27 +1,21 @@
-## Laravel PHP Framework
+# P3 Lorem ispum and User Generator
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+## Live URL
+<http://p3.philipjames.me>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+## Demo Screencast
+coming soon...
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+## Description
+This website uses the Laravel frame work to provide lorem ipsum text or random user data as filler content for websites. For extra features, I reworked my P2 xkcd style password generator using Laravel. I also added a feature that outputs the random user data as JSON so it can easily be used.
 
-## Official Documentation
+## Details for teaching team
+No login required. 
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+## Wordlist Info from [P2](https://github.com/philipjamesk/p2):
+I found a Google generated list of the 10,000 most common USA English words (see below). Since I knew that I only wanted words between 4 and 12 letters long in my password generator, and since the wordlist has extraneous whitespace characters in it. I wrote a short PHP script (wordlistmaker.php) that goes through the original word list, drops any words shorter than 4 characters and longer than 12, cleans the white space from them, and then serializes the new array so easy loading by the generator.php file for the password maker. The serialized file has 8752 words in it. I put in echo statements so I would see some confirmation in the browser when I ran the script. The file can be run by going to <http://p2.philipjames.me/wordlistmaker.php>
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+## Outside code
+* Bootstrap: via MaxCDN <https://www.bootstrapcdn.com/>
+* Bootstrap Yeti Template: via Bootswatch <https://www.bootstrapcdn.com/bootswatch/>
+* Initial word list: <https://github.com/first20hours/google-10000-english/blob/master/google-10000-english-usa.txt>
