@@ -14,10 +14,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/">Home</a></li>
-        <li><a href="/lorem">Lorem Ipsum</a></li>
-        <li><a href="/users">User Generator</a></li>
-        <li><a href="/password">Password Generator</a></li>
+        <li class={{ Request::is('/') ? 'active' :''}}><a href="/">Home</a></li>
+        <li class={{ Request::is('lorem') ? 'active' :''}}><a href="/lorem">Lorem Ipsum</a></li>
+        <li class={{ Request::is('users') ? 'active' :''}}><a href="/users">User Generator</a></li>
+        <li class={{ Request::is('password') ? 'active' :''}}><a href="/password">Password Generator</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container -->

@@ -27,3 +27,9 @@ body {
   color: #000;
   text-decoration: underline;
 }
+
+/* make active nav stand out more */
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+  background-color: #eee;
+  color: #272727;
+}
