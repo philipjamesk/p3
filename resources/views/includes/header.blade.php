@@ -15,9 +15,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li {{ Request::is('/') ? 'class="active"' :''}}><a href="/">Home</a></li>
-        <li class={{ Request::is('lorem') ? 'class="active"' :''}}><a href="/lorem">Lorem Ipsum</a></li>
-        <li class={{ Request::is('users') ? 'class="active"' :''}}><a href="/users">User Generator</a></li>
-        <li class={{ Request::is('password') ? 'class="active"' :''}}><a href="/password">Password Generator</a></li>
+        <li {{ Request::is('lorem') ? 'class="active"' :''}}><a href="/lorem">Lorem Ipsum</a></li>
+        <li {{ Request::is('users') ? 'class="active"' :''}}><a href="/users">User Generator</a></li>
+        <li {{ Request::is('password') ? 'class="active"' :''}}><a href="/password">Password Generator</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container -->
