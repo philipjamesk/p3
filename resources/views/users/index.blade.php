@@ -8,3 +8,7 @@
   @include('users.form')
   @include('includes.errors')
 @stop
+
+@section('scripts')
+  <script src="/js/users.js" ></script>
+@stop

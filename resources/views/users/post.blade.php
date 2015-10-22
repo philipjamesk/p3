@@ -14,3 +14,7 @@
     <hr>
   @endforeach
 @stop
+
+@section('scripts')
+  <script src="/js/users.js" ></script>
+@stop
