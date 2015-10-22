@@ -1,12 +1,16 @@
 <h2>Create Random Users</h2>
 <p>The form be use below to create random users for your website.</p> 
 <p>Select from commonly used attributes.</p>
-<p>For ease of use, after generating your users, scroll down and click "Get JSON" for a JSON file to save for future use.</p>
-<form method="POST" action="/users">
+<p>For ease of use, select "Output results as JSON" for a JSON file to save for future use.</p>
+<form method="POST" action="/users" id="users"?>
   <input type="hidden" value="{{ csrf_token() }}" name="_token">
   <fieldset>
     <label for="number">How Many Users (1-100):</label>
     <input type="text" id="number" name="number" value={{ old('number', '10') }}>
+  </fieldset>
+  <fieldset>
+    <input type="checkbox" name="json" id="json" {{ old('json') ? "checked" : "" }}>
+    <label for="json">Output results as JSON</label>
   </fieldset>
   <h3>Options</h3>
   <fieldset>
