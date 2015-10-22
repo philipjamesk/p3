@@ -16,7 +16,9 @@ I used some jQuery so that if the user selects the JSON option on the users gene
 
 I made custom errors page in my views, to use if the cookie expired before the users selected the JSON version, but after I stopped using the cookie version, the error page is now unused. I left it in so it would be easy to implement if I wanted to use it in the future.
 
-Otherwise, things should be pretty straight forward. I made a seperate controller for each of 
+Otherwise, things should be pretty straight forward. I made a seperate controller for each of the features, and broke the views for each feature into form.blade.php, index.blade.php, and post.blade.php. That allowed me to have the form appear for another use after the first post.
+
+All custom CSS is located in css/custom.css with each style comment since I only made minor tweaks to the theme I used. The only custom javascript if for the users section so that when JSON output is selected it opens in a new tab.
 
 ## Wordlist Info from [P2](https://github.com/philipjamesk/p2):
 I found a Google generated list of the 10,000 most common USA English words (see below). Since I knew that I only wanted words between 4 and 12 letters long in my password generator, and since the wordlist has extraneous whitespace characters in it. I wrote a short PHP script (wordlistmaker.php) that goes through the original word list, drops any words shorter than 4 characters and longer than 12, cleans the white space from them, and then serializes the new array so easy loading by the generator.php file for the password maker. The serialized file has 8752 words in it.
