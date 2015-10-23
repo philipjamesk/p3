@@ -4,7 +4,7 @@
 <http://p3.philipjames.me>
 
 ## Demo Screencast
-coming soon...
+<https://youtu.be/c2VtyPtOCvQ>
 
 ## Description
 This website uses the Laravel frame work to provide lorem ipsum text or random user data as filler content for websites. For extra features, I reworked my P2 xkcd style password generator using Laravel. I also added a feature that outputs the random user data as JSON so it can easily be used.
